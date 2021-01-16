@@ -1,11 +1,12 @@
 import './App.css';
 import 'materialize-css';
-import { Navbar, NavItem, Icon, Dropdown, Footer, TextInput, Button } from 'react-materialize';
+import { Navbar, NavItem, Icon, Dropdown, Button } from 'react-materialize';
 
 import logo from '../src/images/sugar-logo-cropped.png'
 import background from '../src/images/pexels-lisa-fotios-230325.jpg'
+import Footerx from './components/Footerx'
 
-var FontAwesome = require('react-fontawesome')
+//var FontAwesome = require('react-fontawesome')
 
 const isOn = false;
 
@@ -87,7 +88,7 @@ function App() {
 
         <div className="main_container" >
           <div className="left_con" style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)',
+            backgroundImage: 'url(' + background + ')',
             color: "#f5f5f5"
           }} ></div>
           <div className="right_con">
@@ -115,73 +116,9 @@ function App() {
             backgroundImage: 'url(https://images.pexels.com/photos/230743/pexels-photo-230743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)',
             color: "#f5f5f5"
           }}>
-
           </div>
         </div>
-
-
-
-        <Footer
-          className="example flex"
-          copyrights={'COPYRIGHT © 2021 SUGARMAMEJ'}
-          links={<ul><li><a className="grey-text text-lighten-3" href="#!">Policy</a></li><li><a className="grey-text text-lighten-3" href="#!">Customer Service</a></li><li><a className="grey-text text-lighten-3" href="#!">About</a></li><li><a className="grey-text text-lighten-3" href="#!">Contact us</a></li></ul>}
-          moreLinks={
-            <>
-              <a className="grey-text text-lighten-4 right" href="#!" style={{ 'marginLeft': '0.5rem' }}>
-                <FontAwesome
-                  className="super-crazy-colors"
-                  name="facebook-official"
-                  size="2x" /></a>
-              <a className="grey-text text-lighten-4 right" href="#!" style={{ 'marginLeft': '0.5rem' }}>
-                <FontAwesome
-                  className="super-crazy-colors"
-                  name="instagram"
-                  size="2x" /></a>
-              <a className="grey-text text-lighten-4 right" href="#!" style={{ 'marginLeft': '0.5rem' }}>
-                <FontAwesome
-                  className="super-crazy-colors"
-                  name="cc-paypal"
-                  size="2x" /></a>
-              <a className="grey-text text-lighten-4 right" href="#!" style={{ 'marginLeft': '0.5rem' }}>
-                <FontAwesome
-                  className="super-crazy-colors"
-                  name="cc-visa"
-                  size="2x" /></a>
-              <a className="grey-text text-lighten-4 right" href="#!" style={{ 'marginLeft': '0.5rem' }}>
-                <FontAwesome
-                  className="super-crazy-colors"
-                  name="cc-mastercard"
-                  size="2x" /></a>
-            </>}
-        >
-          <div className="footercontainer">
-            <div className="left-panel">
-              <h5 className="white-text">
-                Subscription
-              </h5>
-              <div className="subscribe-sec">
-                <TextInput
-                  id="TextInput-4"
-                  placeholder="email address"
-                />
-                <Button
-                  node="button"
-                  type="submit" waves="light" style={{ 'paddingLeft': '1rem' }}
-                  className="#212121 grey darken-4">Subscribe
-                </Button>
-              </div>
-
-            </div>
-            <div className="middle-panel">
-
-            </div>
-            <div className="right-panel">
-              <p className="grey-text text-lighten-4">
-
-              </p>
-            </div>
-          </div>
-        </Footer>
+        <Footerx />
       </div>
     </div >
   );
