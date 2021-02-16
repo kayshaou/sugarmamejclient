@@ -6,33 +6,69 @@ import { Footer, TextInput, Button, Modal } from "react-materialize";
 var FontAwesome = require("react-fontawesome");
 require('dotenv').config();
 
-const subscriptionEndpoint = process.env.sugar_api_endpoint;
 
 const Footerx = () => {
   const [emailAddress, setEmailAddress] = useState("");
   const [result, setResult] = useState(null);
+  const [modalHeader, setModalHeader] = useState(null);
 
+  const url = "https://pre-sugarmamej.herokuapp.com/";
 
-  useEffect(() => {
-    return (() => {
-      fetch("https://pre-sugarmamej.herokuapp.com/subscription/subscribe", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ emailAddress })
-      })
-        .then(data => {
-          let response = data;
-          console.log(response);
-          setResult(response.message);
+  const doSubscribe = () => {
+    setModalHeader(null);
+    fetch(url + "subscription/subscribe", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-  With, Content-Type, Accept'
+      },
+      body: JSON.stringify({ emailAddress })
+    }).then((response) => response.json())
+      .then((data) => {
+        // console.log('This is your data', data);
+        if (data.message) {
+          setResult("Please check your email to confirm the subscription");
+          setModalHeader("Success");
           setEmailAddress("");
-        })
-        .catch((err) => {
-          setResult(err.message);
-        })
-    });
-  }, [result]);
+        } else {
+          setResult(data.error);
+          setModalHeader("Oops!");
+        }
+      })
+      .catch((err) => {
+        let error = err;
+        setResult(error.error);
+        setModalHeader("Oops!");
+      })
+  }
+
+  // useEffect(() => {
+  //   return (() => {
+  //     fetch(url + "subscription/subscribe", {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Access-Control-Allow-Origin': '*',
+  //         'Access-Control-Allow-Headers': 'Origin, X-Requested-  With, Content-Type, Accept'
+  //       },
+  //       body: JSON.stringify({ emailAddress })
+  //     }).then((response) => response.json())
+  //       .then((data) => {
+  //         console.log('This is your data', data);
+
+  //         if (data.message) {
+  //           setResult(data.message);
+  //         } else {
+  //           setResult(data.error);
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         let error = err;
+  //         setResult(error.error);
+  //       })
+  //   });
+  // }, [result]);
 
   return (
     <>
@@ -65,16 +101,7 @@ const Footerx = () => {
         }
         moreLinks={
           <>
-            <a
-              className='grey-text text-lighten-4 right'
-              href='#!'
-              style={{ marginLeft: "0.5rem" }}>
-              <FontAwesome
-                className='super-crazy-colors'
-                name='instagram'
-                size='2x'
-              />
-            </a>
+
             <a
               className='grey-text text-lighten-4 right'
               href='#!'
@@ -120,7 +147,7 @@ const Footerx = () => {
               <Button
                 node='button'
                 type='submit'
-                waves='light' onClick={() => setResult(true)}
+                waves='light' onClick={doSubscribe}
                 style={{ paddingLeft: "1rem" }}
                 className='#212121 grey darken-4'>
                 Subscribe
@@ -128,11 +155,11 @@ const Footerx = () => {
               {result &&
                 <Modal
                   actions={[
-                    <Button flat modal="close" node="button" waves="green">Close</Button>
+                    <Button onClick={() => setResult(null)} flat modal="close" node="button" waves="green">Close</Button>
                   ]}
                   bottomSheet={false}
                   fixedFooter={false}
-                  header="Well done!"
+                  header={modalHeader}
                   id="Modal-0"
                   open={true}
                   options={{

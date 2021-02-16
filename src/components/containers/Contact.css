@@ -1,0 +1,60 @@
+.contact_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  height: 68vh;
+  margin-top: 1rem;
+}
+.contact {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.contact_header {
+  justify-content: space-around;
+  align-content: left;
+  word-wrap: break-word;
+  /* padding-left: 7rem; */
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.contact_header > h1 {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.contact_content {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contact_content > .left {
+  display: flex;
+  flex: 0.8;
+  flex-direction: column;
+}
+.contact_content > .right {
+  border-width: 0 0 0 1px;
+  flex: 0.2;
+  border-color: #e8e1e1;
+  border-style: solid;
+  padding-left: 1rem;
+}
+
+.contact_content > .left > .contact_subheader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.contact_content > .left > .social_logo {
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 0 2rem 0;
+}
+.contact_content > .left > .social_logo > a > span {
+  margin-right: 0.5rem;
+}
+.contact_content > .left > .social_logo > a > span:hover {
+  color: grey;
+}

@@ -1,8 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,80);
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&family=Montserrat&family=Open+Sans&display=swap");
+
+* {
+  box-sizing: 0;
+  margin: 0;
+}
+
 @media screen and (max-width: 900px) {
   body,
-  html {
-    font-family: Montserrat;
+  html,
+  input,
+  select,
+  textarea,
+  button {
+    padding: 0;
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
   }
 
   .main_container {
@@ -56,8 +68,12 @@
 
 @media screen and (min-width: 901px) {
   body,
-  html {
-    font-family: Montserrat;
+  html,
+  input,
+  select,
+  button,
+  textarea {
+    font-family: "JetBrains Mono", monospace;
   }
   nav ul a {
     color: black;
@@ -71,7 +87,9 @@
     text-transform: uppercase;
     font-weight: 300;
   }
-
+  .container > .nav-wrapper {
+    box-shadow: 0;
+  }
   .dropdown-content {
     top: -62px;
     z-index: 9999999;
