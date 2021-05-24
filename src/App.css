@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+i:hover {
+  color: red;
+}
+
 @media screen and (max-width: 900px) {
   body,
   html,
@@ -75,8 +79,14 @@
   textarea {
     font-family: "JetBrains Mono", monospace;
   }
+  nav {
+    width: 100vw;
+  }
   nav ul a {
     color: black;
+  }
+  nav ul a:hover {
+    background-color: transparent;
   }
   nav .brand-logo {
     display: flex !important;
@@ -156,5 +166,17 @@
   .subscribe-sec .input-field input:focus {
     border-bottom: 1px solid #ffffff;
     color: white;
+  }
+  .annouce_bar {
+    width: 100vw;
+    height: 19px;
+    left: 0;
+    position: relative;
+    font-size: smaller;
+    background-color: #fffaf0;
+    color: #696969;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
   }
 }

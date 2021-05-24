@@ -4,7 +4,6 @@ import { Footer, TextInput, Button, Modal } from "react-materialize";
 
 
 var FontAwesome = require("react-fontawesome");
-require('dotenv').config();
 
 
 const Footerx = () => {
@@ -12,7 +11,8 @@ const Footerx = () => {
   const [result, setResult] = useState(null);
   const [modalHeader, setModalHeader] = useState(null);
 
-  const url = "https://pre-sugarmamej.herokuapp.com/";
+
+  const url = process.env.REACT_APP_SUGAR_API_ENDPOINT;
 
   const doSubscribe = () => {
     setModalHeader(null);

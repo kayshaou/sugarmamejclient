@@ -1,0 +1,66 @@
+.error {
+  color: red;
+}
+
+.accountlanding_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex: 0.5 0.5;
+  margin: 2rem 0 2rem 0;
+}
+
+.accountlanding_wrapper > .member_login {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  border-width: 0 1px 0 0;
+  border-color: #dcdcdc;
+  border-style: none solid none none;
+}
+
+.accountlanding_wrapper > .member_login > div > div.sub_content {
+  line-height: 11px;
+  font-size: small;
+  margin-bottom: 1rem;
+}
+
+.accountlanding_wrapper > .member_login > div > div.sub_content_II {
+  line-height: 11px;
+  font-size: small;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #696969;
+}
+
+.accountlanding_wrapper > .member_login > div > div.sub_content_II a {
+  text-decoration: wavy;
+  color: #696969;
+  line-height: 20px;
+}
+
+.accountlanding_wrapper > .alternative_login_options {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:not([type]),
+input[type="text"]:not(.browser-default),
+input[type="password"]:not(.browser-default),
+input[type="email"]:not(.browser-default),
+input[type="url"]:not(.browser-default),
+input[type="time"]:not(.browser-default),
+input[type="date"]:not(.browser-default),
+input[type="datetime"]:not(.browser-default),
+input[type="datetime-local"]:not(.browser-default),
+input[type="tel"]:not(.browser-default),
+input[type="number"]:not(.browser-default),
+input[type="search"]:not(.browser-default),
+textarea.materialize-textarea {
+  width: 350px;
+}

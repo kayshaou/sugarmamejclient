@@ -32,7 +32,7 @@ export default function About() {
                     </div>
                     <div className="verse">
                         <ul >
-                            <li><b>that's all folks...</b></li>
+                            <li><b>That's all folks...</b></li>
                         </ul>
                     </div>
                 </div>
